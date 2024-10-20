@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de Radio</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://extassisnetwork.com/player/Luna/luna.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #extassisnetwork {
+            width: 360px;
+            height: 450px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('https://i.postimg.cc/qBF1JdzK/449217683-1807427823395976-5351199727574542858-n.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a FM PUERTO VIEJO 91.5</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#programacion">Programación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Escucha la mejor música en FM PUERTO VIEJO 91.5.</p>
+    </section>
+    <section id="programacion">
+        <h2>Programación</h2>
+        <p>Consulta nuestra programación diaria.</p>
+    </section>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="/enviar" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2024 FM PUERTO VIEJO 91.5. Todos los derechos reservados.</p>
+    </footer>
+    <div id="extassisnetwork"></div>
+    <script>
+        $("#extassisnetwork").lunaradio({
+            streamurl: "https://stream.zeno.fm/lsmgt6vhdxruv",
+            radioname: "FM PUERTO VIEJO 91.5",
+            coverimage: "https://i.postimg.cc/hvNspVHs/logo-radio.png",
+            onlycoverimage: false,
+            userinterface: "big",
+            backgroundcolor: "#ffffff",
+            fontcolor: "#000000",
+            hightlightcolor: "#969696",
+            fontname: "Be Vietnam",
+            googlefont: "Be Vietnam",
+            fontratio: "0.4",
+            scroll: "true",
+            coverstyle: "animated",
+            usevisualizer: "real",
+            visualizertype: "6",
+            streamtype: "shoutcast2",
+            shoutcastpath: "/stream",
+            shoutcastid: "1",
+            metadatainterval: "5000",
+            volume: "100",
+            usestreamcorsproxy: "true",
+        });
+    </script>
+</body>
+</html>
